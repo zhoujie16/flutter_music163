@@ -9,29 +9,23 @@ class RankDetail extends StatefulWidget {
 HttpUtil _httpUtil = HttpUtil();
 
 class _RankDetailState extends State<RankDetail> {
-
   Map _playlist; // 榜单信息
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-
-    _httpUtil.get("/playlist/detail?id=19723756").then((data) {
-      var playlist = data["playlist"];
-      // var tracks = playlist["playlist"];
-      // print(data['playlist']);
-      setState(() {
-        _playlist = data['playlist'];
-      });
+    // 请求数据
+    String url = "/playlist/detail?id=19723756";
+    _httpUtil.get(url).then((data) {
+      // print(url);
     });
   }
 
-  _buildListView(){
-    var tracks = _playlist['tracks'];
-
-
-
+  _buildListView() {
+    return Container(
+      child: Text('测试'),
+    );
   }
 
   @override
@@ -40,11 +34,7 @@ class _RankDetailState extends State<RankDetail> {
       appBar: AppBar(
         title: Text('榜单详情'),
       ),
-      body: Container(
-        child: ListView(
-          children: _buildListView(),
-        )
-      ),
+      body: Container(child: Text('测试')),
     );
   }
 }

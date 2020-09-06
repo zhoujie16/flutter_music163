@@ -1,5 +1,4 @@
 // 排行榜页面
-
 import 'package:flutter/material.dart';
 import 'comp/main_rank_panel.dart';
 import 'comp/other_rank_panel.dart';
